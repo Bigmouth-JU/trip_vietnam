@@ -96,6 +96,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const sectionRestaurants = ids.map(id => restaurants.find(r => r.id === id)).filter(Boolean);
 
+    // Sort by rating desc, then by review count (numeric) desc
+    sectionRestaurants.sort((a, b) => {
+      const ratingDiff = b.rating - a.rating;
+      if (ratingDiff !== 0) return ratingDiff;
+      // Parse reviewsCount: remove commas and convert to number
+      const countA = parseInt((a.reviewsCount || '0').replace(/,/g, ''), 10) || 0;
+      const countB = parseInt((b.reviewsCount || '0').replace(/,/g, ''), 10) || 0;
+      return countB - countA;
+    });
+
     sectionRestaurants.forEach((r, index) => {
       const hashtagsHtml = r.tags.map(tag => `<span class="card-tag">${tag}</span>`).join(' ');
       
@@ -120,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <!-- Card Text Overlay -->
         <div class="card-overlay">
           <div class="card-short-intro">
-            ${r.shortIntro}
+            ${r.intro}
           </div>
           <h3 class="card-title">${r.name}</h3>
           
@@ -152,6 +162,80 @@ document.addEventListener('DOMContentLoaded', () => {
     renderSectionGrid(gridKorean, SECTIONS_CONFIG.korean);
     renderSectionGrid(gridHotel, SECTIONS_CONFIG.hotel);
     renderSectionGrid(gridCafe, SECTIONS_CONFIG.cafe);
+    setupPCSliders();
+  }
+
+  // ==========================================
+  // PC Carousel Slider (4 cards visible, arrow nav)
+  // ==========================================
+  function setupPCSliders() {
+    const CARDS_PER_PAGE = 4;
+    const wrappers = document.querySelectorAll('.slider-wrapper');
+
+    wrappers.forEach(wrapper => {
+      const grid = wrapper.querySelector('.restaurant-grid');
+      const prevBtn = wrapper.querySelector('.prev-btn');
+      const nextBtn = wrapper.querySelector('.next-btn');
+      if (!grid || !prevBtn || !nextBtn) return;
+
+      let currentPage = 0;
+
+      function getCards() {
+        return Array.from(grid.querySelectorAll('.restaurant-card'));
+      }
+
+      function getTotalPages() {
+        const cards = getCards();
+        return Math.max(1, Math.ceil(cards.length / CARDS_PER_PAGE));
+      }
+
+      function updateVisibility() {
+        // Only run on PC (width > 600)
+        if (window.innerWidth <= 600) return;
+
+        const cards = getCards();
+        const start = currentPage * CARDS_PER_PAGE;
+        const end = start + CARDS_PER_PAGE;
+
+        cards.forEach((card, i) => {
+          card.style.display = (i >= start && i < end) ? '' : 'none';
+        });
+
+        prevBtn.disabled = currentPage === 0;
+        nextBtn.disabled = currentPage >= getTotalPages() - 1;
+      }
+
+      function resetForMobile() {
+        if (window.innerWidth <= 600) {
+          getCards().forEach(card => { card.style.display = ''; });
+          prevBtn.disabled = false;
+          nextBtn.disabled = false;
+        }
+      }
+
+      prevBtn.addEventListener('click', () => {
+        if (currentPage > 0) {
+          currentPage--;
+          updateVisibility();
+        }
+      });
+
+      nextBtn.addEventListener('click', () => {
+        if (currentPage < getTotalPages() - 1) {
+          currentPage++;
+          updateVisibility();
+        }
+      });
+
+      // Initial render
+      updateVisibility();
+
+      // Reset on resize
+      window.addEventListener('resize', () => {
+        resetForMobile();
+        if (window.innerWidth > 600) updateVisibility();
+      });
+    });
   }
 
   // Show Detail View and Load Specific Restaurant Details
@@ -367,19 +451,61 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!fabMenuBtn) return;
     
     fabMenuList.innerHTML = '';
-    
+
+    // Group restaurants by category (preserve section order)
+    const sectionOrder = [
+      '관광객이라면 가성비와 갬성을 한번에!',
+      '베트남만의 고급 로컬 다이닝',
+      '한국인이 사랑하는 핫플레이스',
+      '호텔 근처 럭셔리 맛집',
+      '커피 & 디저트'
+    ];
+    const sectionIcons = {
+      '관광객이라면 가성비와 갬성을 한번에!': 'fa-wallet',
+      '베트남만의 고급 로컬 다이닝': 'fa-award',
+      '한국인이 사랑하는 핫플레이스': 'fa-heart',
+      '호텔 근처 럭셔리 맛집': 'fa-bed',
+      '커피 & 디저트': 'fa-mug-hot'
+    };
+
+    const grouped = {};
     restaurants.forEach(r => {
-      const li = document.createElement('li');
-      li.className = 'fab-list-item';
-      li.innerHTML = `
-        <span class="fab-list-name">${r.name}</span>
-        <span class="fab-list-rating"><i class="fa-solid fa-star"></i> ${r.rating}</span>
-      `;
-      li.addEventListener('click', () => {
-        fabMenuOverlay.classList.add('hidden');
-        showDetailView(r.id);
+      if (!grouped[r.category]) grouped[r.category] = [];
+      grouped[r.category].push(r);
+    });
+
+    sectionOrder.forEach((category, idx) => {
+      const items = grouped[category];
+      if (!items || items.length === 0) return;
+
+      // Section header
+      const header = document.createElement('li');
+      header.className = 'fab-section-header';
+      const icon = sectionIcons[category] || 'fa-utensils';
+      header.innerHTML = `<i class="fa-solid ${icon}"></i><span>${category}</span>`;
+      fabMenuList.appendChild(header);
+
+      // Chips container
+      const chipsRow = document.createElement('li');
+      chipsRow.className = 'fab-chips-row';
+      items.forEach(r => {
+        const chip = document.createElement('button');
+        chip.className = 'fab-chip';
+        chip.textContent = r.name;
+        chip.addEventListener('click', () => {
+          fabMenuOverlay.classList.add('hidden');
+          showDetailView(r.id);
+        });
+        chipsRow.appendChild(chip);
       });
-      fabMenuList.appendChild(li);
+      fabMenuList.appendChild(chipsRow);
+
+      // Divider (except after last section)
+      if (idx < sectionOrder.length - 1) {
+        const divider = document.createElement('li');
+        divider.className = 'fab-divider';
+        fabMenuList.appendChild(divider);
+      }
     });
 
     fabMenuBtn.addEventListener('click', () => {

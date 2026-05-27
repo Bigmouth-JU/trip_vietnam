@@ -180,9 +180,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 10:00~오후 10:30",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#베트남전통요리",
+      "#채식메뉴",
+      "#대나무세트",
+      "#올드쿼터"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPyVQ7gMmYq9VJRqYBwm4XECVHIfXMVDN4eJ1Ee=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipMjbpBFdV5vfMHuQhyqWzq5RyXKMxQfg5XGpIJI=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "채식여행가",
+        "rating": 5,
+        "text": "베트남 전통 요리를 이렇게 다양하게 먹어볼 수 있는 곳이 드뭅니다. 대나무 바구니에 담겨 나오는 세트 메뉴가 비주얼도 훌륭하고 맛도 각각 개성이 넘쳐요!",
+        "date": "2026-05-22"
+      },
+      {
+        "username": "하노이탐방",
+        "rating": 5,
+        "text": "리뷰 2만 9천 개가 이유 있습니다. 가성비도 최고이고 직원분들도 친절해서 재방문 의사 100%입니다.",
+        "date": "2026-05-18"
+      },
+      {
+        "username": "베트남음식탐구",
+        "rating": 4,
+        "text": "반세오가 특히 맛있었어요. 바삭하게 부쳐낸 반세오를 채소랑 라이스페이퍼에 싸서 먹으니 정말 건강하고 맛있습니다.",
+        "date": "2026-05-10"
+      }
+    ]
   },
   {
     "id": 5,
@@ -204,9 +231,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 8:00~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#분짜전문",
+      "#가성비맛집",
+      "#올드쿼터",
+      "#외국인추천"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipO9QhM3lMnIxqBYv6Gx6u9B-W3ynBT36wDvqBf6=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipNqeqjiqajmEk0I4kUJuMPfQRi1P5bU0gL8SxBo=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "분짜러버",
+        "rating": 5,
+        "text": "하노이에서 분짜를 여러 군데 먹어봤는데 여기가 젤 깔끔하고 국물도 진해서 맛있었어요. 넴도 바삭하게 잘 튀겨져 나와요.",
+        "date": "2026-05-20"
+      },
+      {
+        "username": "올드쿼터탐방",
+        "rating": 4,
+        "text": "작은 가게지만 항상 손님이 많아서 맛을 증명합니다. 하노이 맥주 한 잔과 분짜의 조합이 환상적이에요.",
+        "date": "2026-05-12"
+      },
+      {
+        "username": "가성비여행자",
+        "rating": 4,
+        "text": "깔끔하고 에어컨도 잘 나오고 메뉴도 다양합니다. 영어 메뉴판도 있어서 외국인 관광객도 편하게 주문할 수 있어요.",
+        "date": "2026-05-05"
+      }
+    ]
   },
   {
     "id": 6,
@@ -228,9 +282,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 11:00~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#피자4P's",
+      "#화덕피자",
+      "#수제치즈",
+      "#하노이피자맛집"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPQG-h0OtEeQvHwnw3VTFkqTKa0g0gJr1WlcjUe=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipNCxz3gGvWGV_z8XpQlv8z2Q7_SB6zqEVpFtQiA=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "피자매니아",
+        "rating": 5,
+        "text": "베트남에서 이 정도 수준의 피자를 만날 수 있다니 놀랍습니다. 부라타 치즈 피자는 정말 크리미하고 맛이 예술입니다. 예약 필수!",
+        "date": "2026-05-24"
+      },
+      {
+        "username": "이탈리안감성",
+        "rating": 5,
+        "text": "직접 만든 치즈를 사용한다는 게 맛에서 확 느껴집니다. 크랩 파스타도 신선한 게살이 가득해서 최고였어요.",
+        "date": "2026-05-16"
+      },
+      {
+        "username": "장거리여행자",
+        "rating": 4,
+        "text": "줄이 항상 길지만 그만한 가치가 충분합니다. 베트남에서 먹은 음식 중 탑3 안에 드는 맛이었습니다.",
+        "date": "2026-05-09"
+      }
+    ]
   },
   {
     "id": 7,
@@ -252,9 +333,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 10:30~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#베트남가정식",
+      "#가성비",
+      "#여행자맛집",
+      "#모닝글로리"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNfNKAl6aijJAqBDtWQ5RjdmJH3VDqJkFiRu6kp=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipP-MNaA3h5Dh-G8vI0FxhqBGH8vT3Mg_NlXL-2M=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "베트남가정식팬",
+        "rating": 4,
+        "text": "올드쿼터 한복판에서 저렴하고 맛있는 가정식을 먹을 수 있어 좋습니다. 볶음밥과 스프링롤 콤보가 최고의 가성비입니다.",
+        "date": "2026-05-23"
+      },
+      {
+        "username": "배낭여행객",
+        "rating": 4,
+        "text": "가격 대비 양도 많고 맛도 있어서 만족스러웠습니다. 갈릭 모닝글로리 볶음이 특히 마늘향이 강해서 입맛을 돋웁니다.",
+        "date": "2026-05-14"
+      },
+      {
+        "username": "혼자여행자",
+        "rating": 5,
+        "text": "혼자 가도 부담 없는 분위기입니다. 직원들이 영어도 잘 통해서 주문하기 편했어요. 재방문 의사 있습니다!",
+        "date": "2026-05-07"
+      }
+    ]
   },
   {
     "id": 8,
@@ -517,9 +625,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 11:00~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#프랑스빌라",
+      "#하노이정통요리",
+      "#고품격",
+      "#베트남전통"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "빌라다이닝",
+        "rating": 5,
+        "text": "프랑스식 빌라 건물에서 정통 하노이 요리를 즐기는 경험이 정말 특별합니다. 꿀 소스 돼지고기 구이는 달콤하고 촉촉해서 모든 연령대가 좋아할 맛입니다.",
+        "date": "2026-05-25"
+      },
+      {
+        "username": "우아한식사",
+        "rating": 5,
+        "text": "분위기, 음식, 서비스 삼박자가 모두 훌륭합니다. 테이블 세팅부터 플레이팅까지 세심한 손길이 느껴져요. 특별한 날 방문하기 좋습니다.",
+        "date": "2026-05-19"
+      },
+      {
+        "username": "하노이미식탐방",
+        "rating": 4,
+        "text": "홈 스타일 스프링롤이 바삭하고 속재료도 신선합니다. 하노이식 쌀국수는 맑은 육수에 깊은 감칠맛이 느껴져요.",
+        "date": "2026-05-11"
+      }
+    ]
   },
   {
     "id": 14,
@@ -541,9 +673,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 11:30~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#미쉐린가이드",
+      "#세련된요리",
+      "#뛰어난서비스",
+      "#2011년오픈"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "미쉐린탐방가",
+        "rating": 5,
+        "text": "미쉐린 가이드에 소개된 이유를 확실히 알겠습니다. 에센스 스타일 분보남보는 볶은 소고기와 땅콩, 각종 허브가 조화롭게 어우러져 맛의 밸런스가 훌륭합니다.",
+        "date": "2026-05-24"
+      },
+      {
+        "username": "파인다이닝팬",
+        "rating": 5,
+        "text": "2011년부터 한결같은 맛과 서비스를 유지한다는 게 대단합니다. 코코넛 푸딩 디저트까지 완벽한 마무리였습니다.",
+        "date": "2026-05-17"
+      },
+      {
+        "username": "하노이맛집헌터",
+        "rating": 4,
+        "text": "허브 소스 생선 구이가 특히 인상적이었습니다. 허브의 향과 생선이 잘 어우러져 잡내 없이 깔끔합니다.",
+        "date": "2026-05-08"
+      }
+    ]
   },
   {
     "id": 15,
@@ -565,9 +721,37 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 8:00~오후 8:00",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#오바마분짜",
+      "#세계유명맛집",
+      "#숯불분짜",
+      "#하노이필수코스"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPr4z2G8a2fXoaOk5VLqxqF8eGx1F7GV98HrFv8=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipMqK6UQA2FLl8kWzpJIxgYJi1K36RqHflxQOVLJ=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipOx5kF9IqeivJKDqdVB6aWHZ5EkYpIcm1pHjsij=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "오바마따라가기",
+        "rating": 5,
+        "text": "드디어 방문했습니다! 오바마가 먹은 그 자리에서 분짜와 하노이 맥주를 시켰어요. 숯불 향이 정말 진하고 국물이 새콤달콤합니다. 사진도 남기고 정말 특별한 경험이었어요!",
+        "date": "2026-05-25"
+      },
+      {
+        "username": "하노이분짜투어",
+        "rating": 4,
+        "text": "세계적으로 유명해진 만큼 줄이 길지만 회전율이 빨라서 오래 기다리지 않았습니다. 해산물 롤도 바삭하고 맛있어요.",
+        "date": "2026-05-18"
+      },
+      {
+        "username": "분짜마스터",
+        "rating": 4,
+        "text": "관광지화 됐다는 편견을 버리세요. 숯불 돼지고기 향이 골목길까지 퍼져서 식욕을 자극합니다. 맛은 보장합니다!",
+        "date": "2026-05-10"
+      }
+    ]
   },
   {
     "id": 16,
@@ -588,9 +772,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 9:00~오후 9:00",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#1966년오픈",
+      "#유서깊은분짜",
+      "#올드쿼터",
+      "#대형넴"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNNb-Hu0lUXLExl4q1LWc1B3FW0eYnFVr2MJjWi=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipMuqRJCRN2RNh2cG8WPbxV4tH9VHVl0JC5eKlH0=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "역사덕후",
+        "rating": 5,
+        "text": "1966년부터 이어온 노포의 깊이가 맛에서 느껴집니다. 대형 게살 넴이 특징인데 크기가 어마어마하고 속이 꽉 차있어요. 분짜 국물이 진하고 고소해서 국물을 다 마셨습니다.",
+        "date": "2026-05-22"
+      },
+      {
+        "username": "올드쿼터식도락",
+        "rating": 4,
+        "text": "하노이 분짜의 원형을 맛볼 수 있는 곳입니다. 화려하진 않지만 진정성 있는 맛이 느껴져요. 현지인들도 즐겨 찾는 게 포인트!",
+        "date": "2026-05-15"
+      },
+      {
+        "username": "노포탐방가",
+        "rating": 4,
+        "text": "수십 년 된 가게라 내부가 소박하지만 그게 오히려 매력입니다. 분짜 한 그릇에 하노이 맥주 한 병 시켜서 점심 한 끼 해결했어요.",
+        "date": "2026-05-07"
+      }
+    ]
   },
   {
     "id": 17,
@@ -612,9 +823,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 6:00~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#빕구르망",
+      "#하노이쌀국수",
+      "#깊은육수",
+      "#미쉐린"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPtPxX27TlCDXZ8M3QCkzEYbRqTfV1Iw2BqRV1Z=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipMpFLI1sLDXcOaV5kqiIb9JVKY-zQsRh-mJYyJ8=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "쌀국수마니아",
+        "rating": 5,
+        "text": "미쉐린 빕 구르망에 오를 자격이 충분합니다. 육수가 맑은데 감칠맛이 엄청나서 다 마셨습니다. 튀김 빵 꿔이를 국물에 적셔 먹는 게 별미예요!",
+        "date": "2026-05-23"
+      },
+      {
+        "username": "퍼탐방자",
+        "rating": 5,
+        "text": "하노이에서 3군데 쌀국수집을 방문했는데 여기 육수가 가장 깊고 진했습니다. 아침 일찍 가도 항상 사람이 많은 이유를 알겠습니다.",
+        "date": "2026-05-16"
+      },
+      {
+        "username": "이른아침탐방",
+        "rating": 4,
+        "text": "이른 아침에 방문했는데 이미 자리가 꽉 차있더라고요. 대기해서 먹은 퍼 따이가 정말 맛있었습니다. 재방문 의사 100%!",
+        "date": "2026-05-09"
+      }
+    ]
   },
   {
     "id": 18,
@@ -636,9 +874,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 7:30~오후 10:30",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#비빔쌀국수",
+      "#분보남보",
+      "#고소한맛",
+      "#가벼운한끼"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPS-Nkn1kPVTaepBPKPW7G7gJxTfyYUVf9NbkuW=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipPHmhMXKM3pBGVSIhbxWtRVT0EuWqP84nBEE5xA=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "비빔쌀국수팬",
+        "rating": 5,
+        "text": "분보남보는 처음 먹어봤는데 완전히 빠졌습니다. 볶은 소고기와 땅콩, 튀긴 양파가 소스와 어우러져 새콤하고 고소한 맛이 중독성 있어요!",
+        "date": "2026-05-21"
+      },
+      {
+        "username": "하노이음식탐구",
+        "rating": 5,
+        "text": "쌀국수인데 국물이 없는 비빔 형태라 색다릅니다. 기름지지 않고 가벼워서 아침이나 점심에 딱 좋아요. 여기 오면 꼭 드셔보세요!",
+        "date": "2026-05-14"
+      },
+      {
+        "username": "건강한식사",
+        "rating": 4,
+        "text": "채소가 풍부하게 들어있어서 건강한 느낌의 한 끼입니다. 숙주와 볶은 소고기 조합이 맛있어요. 가격도 합리적입니다.",
+        "date": "2026-05-06"
+      }
+    ]
   },
   {
     "id": 19,
@@ -660,9 +925,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 6:00~오후 8:30",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#1960년대노포",
+      "#하노이쌀국수명소",
+      "#대기줄맛집",
+      "#전통퍼"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "전통맛집사냥꾼",
+        "rating": 5,
+        "text": "줄이 길어서 포기할까 했는데 10분 정도 기다리니 자리가 났습니다. 즉석에서 썰어 올려주는 우둔살이 정말 부드럽고 육수 맛이 깊고 진합니다.",
+        "date": "2026-05-22"
+      },
+      {
+        "username": "퍼순례자",
+        "rating": 5,
+        "text": "1960년대부터 이어온 전통의 맛을 느낄 수 있습니다. 화려한 서비스는 없지만 음식 자체의 맛이 압도적입니다. 하노이 쌀국수의 정수를 경험하고 싶다면 꼭 방문하세요.",
+        "date": "2026-05-15"
+      },
+      {
+        "username": "아침식사탐방",
+        "rating": 4,
+        "text": "아침 일찍 오픈 전부터 줄이 생깁니다. 육수가 진하고 고기가 신선해서 간단하지만 완성도 높은 아침 식사입니다.",
+        "date": "2026-05-08"
+      }
+    ]
   },
   {
     "id": 20,
@@ -684,9 +973,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 7:00~오후 9:00",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#반미25",
+      "#바삭한바게트",
+      "#푸짐한반미",
+      "#올드쿼터"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPMjwEpaTkBH0tEBGGOq3UMlHTOKnfRuTwCO4qH=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipNd9Hfb-3FzjI12FIhxmN3MJHf8bqVrEjM5QUhA=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "반미러버",
+        "rating": 5,
+        "text": "하노이에서 반미 여러 곳을 먹어봤지만 여기가 단연 최고입니다. 빵이 엄청 바삭하고 고기 양념도 딱 맞아요. 믹스 반미 하나면 점심 한 끼가 충분합니다!",
+        "date": "2026-05-24"
+      },
+      {
+        "username": "스트리트푸드탐방",
+        "rating": 5,
+        "text": "매일 아침 빵을 직접 굽는다는 게 맛에서 느껴집니다. 신선한 채소와 푸짐한 고기가 가득 들어있어서 가성비 최고입니다.",
+        "date": "2026-05-17"
+      },
+      {
+        "username": "하노이베이커리",
+        "rating": 4,
+        "text": "치킨 반미도 맛있었어요. 여기 반미는 양이 많아서 다 못 먹었습니다. 맛은 정말 훌륭해요. 줄이 길지만 회전이 빨라서 오래 기다리지 않아도 됩니다.",
+        "date": "2026-05-09"
+      }
+    ]
   },
   {
     "id": 21,
@@ -708,9 +1024,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "수요일,오후 4:00~11:30",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#숯불닭구이",
+      "#현지인맛집",
+      "#야외노포",
+      "#맥주안주"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "현지맛집발굴",
+        "rating": 5,
+        "text": "관광객보다 현지인이 훨씬 많은 진짜 현지 맛집입니다. 숯불 향이 가득한 닭고기가 특제 소스와 만나 맥주를 계속 부르는 맛입니다!",
+        "date": "2026-05-23"
+      },
+      {
+        "username": "야외식당탐방",
+        "rating": 4,
+        "text": "야외에서 노릇하게 구워지는 닭을 직접 보면서 먹는 즐거움이 있습니다. 날개와 다리가 특히 맛있었어요.",
+        "date": "2026-05-15"
+      },
+      {
+        "username": "퇴근길맥주",
+        "rating": 4,
+        "text": "저녁 늦게 현지인들이 삼삼오오 모여 맥주 마시는 분위기가 정겹습니다. 닭발 구이도 쫀득하고 짭쪼름해서 맥주와 환상의 궁합이에요.",
+        "date": "2026-05-07"
+      }
+    ]
   },
   {
     "id": 22,
@@ -732,9 +1072,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "수요일,오후 2:30~10:00",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#루프탑레스토랑",
+      "#야경맛집",
+      "#고급베트남요리",
+      "#올드쿼터뷰"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "루프탑다이닝",
+        "rating": 5,
+        "text": "올드쿼터의 활기찬 야경을 내려다보며 식사하는 경험이 정말 특별합니다. 음식도 기대 이상으로 훌륭해요. 예약하고 저녁에 방문하길 추천합니다!",
+        "date": "2026-05-25"
+      },
+      {
+        "username": "뷰맛집헌터",
+        "rating": 5,
+        "text": "분짜가 이렇게 고급스럽게 나올 수 있다니 놀랐습니다. 루프탑에서 바라보는 하노이 야경은 평생 잊을 수 없을 것 같아요.",
+        "date": "2026-05-18"
+      },
+      {
+        "username": "로맨틱다이닝",
+        "rating": 4,
+        "text": "커플 여행이라면 꼭 들러야 할 곳입니다. 분위기는 최고이고 직원들의 영어 서비스도 훌륭합니다.",
+        "date": "2026-05-10"
+      }
+    ]
   },
   {
     "id": 23,
@@ -756,9 +1120,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "수요일,오전 6:30~10:00,오전 11:30~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#고품격베트남요리",
+      "#에센스레스토랑",
+      "#현대적재해석",
+      "#세련된플레이팅"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "세련된미식가",
+        "rating": 5,
+        "text": "2011년부터 꾸준히 사랑받는 이유가 있습니다. 전통 조리법을 현대적으로 재해석한 요리들이 보기에도 아름답고 맛도 뛰어납니다.",
+        "date": "2026-05-24"
+      },
+      {
+        "username": "호텔근처탐방",
+        "rating": 5,
+        "text": "연꽃 샐러드가 비주얼도 예쁘고 새콤하고 향긋해서 식사 전 입맛을 돋우기에 좋습니다. 항아리 소고기 구이는 촉촉하고 달콤합니다.",
+        "date": "2026-05-17"
+      },
+      {
+        "username": "완벽한저녁식사",
+        "rating": 4,
+        "text": "서비스가 매우 세심합니다. 항상 웃으며 친절하게 메뉴를 설명해주고 요청사항도 잘 들어줍니다.",
+        "date": "2026-05-09"
+      }
+    ]
   },
   {
     "id": 24,
@@ -780,9 +1168,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 11:30~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#클라우드나인",
+      "#하늘전망레스토랑",
+      "#호안끼엠뷰",
+      "#로맨틱다이닝"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "최고층뷰",
+        "rating": 5,
+        "text": "건물 꼭대기에서 호안끼엠 호수와 하노이 전경을 바라보는 전망이 압도적입니다. 프리미엄 스테이크도 정말 맛있어서 분위기와 음식 모두 완벽한 식사였습니다.",
+        "date": "2026-05-23"
+      },
+      {
+        "username": "하노이야경감상",
+        "rating": 5,
+        "text": "야간에 방문하면 호안끼엠 호수 야경이 정말 아름답습니다. 해산물 파스타도 신선하고 소스가 진해서 만족스러웠어요.",
+        "date": "2026-05-16"
+      },
+      {
+        "username": "특별한날다이닝",
+        "rating": 4,
+        "text": "기념일에 방문했는데 직원분들이 서프라이즈 준비도 도와주셨어요. 음식도 맛있고 분위기도 최고입니다.",
+        "date": "2026-05-08"
+      }
+    ]
   },
   {
     "id": 25,
@@ -804,9 +1216,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 11:30~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#레드빈센트럴",
+      "#코스요리",
+      "#미식가추천",
+      "#정통베트남"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "베트남미식가",
+        "rating": 5,
+        "text": "레몬그라스 향 생선 요리가 정말 인상적이었습니다. 향긋한 레몬그라스와 신선한 생선의 조합이 환상적이에요. 코스 전체 밸런스가 훌륭합니다.",
+        "date": "2026-05-22"
+      },
+      {
+        "username": "코스요리팬",
+        "rating": 5,
+        "text": "테이스팅 세트 메뉴로 베트남 요리의 다양한 면을 경험할 수 있습니다. 서비스도 세심하고 조용한 분위기에서 여유롭게 식사할 수 있어요.",
+        "date": "2026-05-15"
+      },
+      {
+        "username": "아늑한다이닝",
+        "rating": 4,
+        "text": "연꽃씨 디저트가 특별히 기억에 남습니다. 담백하고 자연스러운 단맛이 식사를 아름답게 마무리해줬습니다.",
+        "date": "2026-05-07"
+      }
+    ]
   },
   {
     "id": 26,
@@ -828,9 +1264,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오후 6:00~오후 11:00",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#텅다이닝",
+      "#파인다이닝",
+      "#예약제",
+      "#창의적코스"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "파인다이닝매니아",
+        "rating": 5,
+        "text": "하노이 파인 다이닝의 정수를 경험했습니다. 쉐프의 철학이 담긴 코스 요리 하나하나가 모두 예술 작품 같습니다. 사전 예약 필수입니다!",
+        "date": "2026-05-21"
+      },
+      {
+        "username": "창의적요리탐방",
+        "rating": 5,
+        "text": "현지 식재료를 이렇게 창의적으로 활용할 수 있다니 감탄했습니다. 런치 테이스팅 코스가 가격 대비 훌륭한 가치를 제공합니다.",
+        "date": "2026-05-14"
+      },
+      {
+        "username": "고급식사경험",
+        "rating": 4,
+        "text": "예약이 어려울 만큼 인기 있는 이유를 알겠습니다. 직원들의 음식 설명도 상세하고 전체적인 경험이 매우 만족스러웠습니다.",
+        "date": "2026-05-06"
+      }
+    ]
   },
   {
     "id": 27,
@@ -852,9 +1312,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 11:30~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#오리엔탈비스트로",
+      "#동서양퓨전",
+      "#조용한골목",
+      "#여유로운식사"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "골목탐방가",
+        "rating": 5,
+        "text": "골목 안에 숨어 있는 보석 같은 레스토랑입니다. 조용한 분위기에서 동서양이 조화된 요리를 즐기니 너무 좋았습니다. 비프 타르타르가 정말 일품이에요!",
+        "date": "2026-05-20"
+      },
+      {
+        "username": "오리엔탈다이닝",
+        "rating": 4,
+        "text": "허브 그릴드 연어가 허브 향과 생선의 조합이 완벽합니다. 와인 리스트도 훌륭해서 페어링해서 즐기기 좋아요.",
+        "date": "2026-05-13"
+      },
+      {
+        "username": "여유로운식사자",
+        "rating": 4,
+        "text": "관광지에서 벗어나 조용하게 식사하고 싶다면 여기를 추천합니다. 직원들이 친절하고 음식도 훌륭합니다.",
+        "date": "2026-05-05"
+      }
+    ]
   },
   {
     "id": 28,
@@ -876,9 +1360,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 11:30~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#호안끼엠뷰",
+      "#시그니처플레이트",
+      "#우아한분위기",
+      "#제철식재료"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "호안끼엠다이닝",
+        "rating": 5,
+        "text": "호안끼엠 호수 전망을 바라보며 식사하는 경험이 정말 특별합니다. 리듬 시그니처 플레이트는 제철 식재료의 맛을 최대한 살려낸 훌륭한 요리입니다.",
+        "date": "2026-05-19"
+      },
+      {
+        "username": "뷰맛집순례",
+        "rating": 5,
+        "text": "분위기, 음식, 서비스 모두 수준 높습니다. 해산물 볶음 요리가 신선하고 소스가 풍부해서 밥 도둑이에요.",
+        "date": "2026-05-12"
+      },
+      {
+        "username": "계절과일디저트",
+        "rating": 4,
+        "text": "계절 과일 디저트가 신선하고 달콤해서 완벽한 마무리였습니다. 전체적으로 가격 대비 만족도가 높은 레스토랑입니다.",
+        "date": "2026-05-04"
+      }
+    ]
   },
   {
     "id": 29,
@@ -900,9 +1408,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 7:00~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#에그커피원조",
+      "#1946년오픈",
+      "#하노이필수코스",
+      "#커스터드크림"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipM7tHoYl_JBvevS55WBe8sFxmz8bEbE7hzF1Xnz=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipP9RWrO9IG5F8pJ9PXbhBQI4e7nBGhMhMBvX7UU=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "에그커피순례자",
+        "rating": 5,
+        "text": "1946년부터 에그커피를 만들어온 원조 카페입니다. 진한 베트남 커피 위에 달콤하고 부드러운 커스터드 크림이 올라간 에그커피는 하노이에서 꼭 마셔봐야 할 음료입니다!",
+        "date": "2026-05-24"
+      },
+      {
+        "username": "하노이카페투어",
+        "rating": 5,
+        "text": "좁은 골목 안에 있는 작은 카페인데 분위기가 정말 아늑하고 복고적입니다. 에그커피를 천천히 마시며 하노이 옛 감성을 느낄 수 있어요.",
+        "date": "2026-05-17"
+      },
+      {
+        "username": "커피매니아",
+        "rating": 4,
+        "text": "에그 코코아도 꼭 드셔보세요. 달콤하고 진한 코코아와 에그크림의 조합이 정말 독특하고 맛있습니다.",
+        "date": "2026-05-09"
+      }
+    ]
   },
   {
     "id": 30,
@@ -924,9 +1459,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 7:00~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#에그커피",
+      "#호안끼엠근처",
+      "#꾸덕한크림",
+      "#현지인카페"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipPZNZqzGHFcFnHzCGwDWGNGkJP53vFJidmfFjBN=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipN_QYpjNl9_2kfqdNnPdBsJ-7X2-GqJwrjQE-xC=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "에그커피탐방",
+        "rating": 5,
+        "text": "카페 지앙과 다른 스타일의 에그커피입니다. 크림이 더 꾸덕하고 진해서 개인적으로 여기가 더 좋았어요. 좁은 계단을 올라가는 과정도 색다른 경험입니다!",
+        "date": "2026-05-23"
+      },
+      {
+        "username": "하노이카페매니아",
+        "rating": 5,
+        "text": "호안끼엠 근처에 있어서 관광 후 들르기 딱 좋습니다. 항상 북적이지만 자리가 금방 납니다. 아이스 에그커피가 특히 맛있어요.",
+        "date": "2026-05-16"
+      },
+      {
+        "username": "커피크림팬",
+        "rating": 4,
+        "text": "초콜릿 에그커피도 추천합니다. 진한 초콜릿 향과 에그크림의 조합이 독특하고 달콤합니다.",
+        "date": "2026-05-08"
+      }
+    ]
   },
   {
     "id": 31,
@@ -948,9 +1510,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 7:30~오후 11:30",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#콩카페",
+      "#사회주의테마",
+      "#코코넛스무디",
+      "#하노이필수카페"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipM_fLZMNvnwX-YjNW0zMiI3I1kO3YMT_cqjcRMu=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipMRoXtBhZ1UkwCnKzaKqB-WMg7I2UR_MF3Vp5yt=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "인테리어덕후",
+        "rating": 5,
+        "text": "베트남 사회주의 시대를 테마로 한 인테리어가 정말 독특하고 재미있습니다. 코코넛 스무디 커피는 더위에 지친 몸을 완벽하게 달래줍니다!",
+        "date": "2026-05-22"
+      },
+      {
+        "username": "여행필수코스",
+        "rating": 5,
+        "text": "하노이 여행 중 가장 인상적인 카페였습니다. 군복 스타일 직원분들과 빈티지한 인테리어가 SNS 인증 샷 찍기 너무 좋아요.",
+        "date": "2026-05-15"
+      },
+      {
+        "username": "코코넛커피팬",
+        "rating": 4,
+        "text": "코코넛 밀크 코코아도 정말 맛있습니다. 카페 쓰어다(연유 커피)는 베트남 커피의 진한 맛을 잘 살려냈어요.",
+        "date": "2026-05-07"
+      }
+    ]
   },
   {
     "id": 32,
@@ -972,9 +1561,36 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 6:30~오후 11:00",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#더노트커피",
+      "#메모지카페",
+      "#호안끼엠뷰",
+      "#여행자카페"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipNkp8YaWYaHLNDlZKVm9GBVNBlOZGa8kZj_pD3j=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipPSe1z_-mDHoJKdMC7gNMBhJMqiicV8S9rNEHdL=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "메모지감성",
+        "rating": 5,
+        "text": "전 세계 여행자들의 따뜻한 메모지로 가득한 벽면이 정말 감동적입니다. 저도 메모를 남기고 왔어요. 호안끼엠 호수를 바라보며 마시는 커피가 정말 여행의 여유를 느끼게 해줍니다.",
+        "date": "2026-05-21"
+      },
+      {
+        "username": "여행감성카페",
+        "rating": 5,
+        "text": "카페 곳곳에 걸려있는 메모지를 읽는 것만으로도 시간 가는 줄 모릅니다. 아이스 라떼가 진하고 맛있어요.",
+        "date": "2026-05-14"
+      },
+      {
+        "username": "하노이커피탐방",
+        "rating": 4,
+        "text": "코코넛 커피 스무디가 시원하고 달콤해서 더운 날 딱 좋습니다. 패션후르츠 에이드는 새콤달콤해서 커피를 못 마시는 사람도 즐길 수 있어요.",
+        "date": "2026-05-06"
+      }
+    ]
   },
   {
     "id": 33,
@@ -996,9 +1612,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 8:00~오후 6:00",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#빈티지카페",
+      "#유럽감성",
+      "#저택카페",
+      "#아늑한공간"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "빈티지감성자",
+        "rating": 5,
+        "text": "오래된 저택을 개조한 카페 특유의 빈티지한 분위기가 정말 마음에 듭니다. 좁은 계단을 올라가면 나타나는 아늑한 공간에서 마시는 에그커피가 특별합니다!",
+        "date": "2026-05-20"
+      },
+      {
+        "username": "하노이카페순례",
+        "rating": 5,
+        "text": "시그니처 베트남 쑤아다(연유 아이스커피)가 진하고 달콤해서 정말 맛있습니다. 에어컨도 잘 나와서 더운 날 쉬어가기 완벽한 카페예요.",
+        "date": "2026-05-13"
+      },
+      {
+        "username": "유럽감성탐방",
+        "rating": 4,
+        "text": "아몬드 라떼가 고소하고 부드러워서 추천합니다. 조용하고 아늑한 분위기에서 책 읽기도 좋고 여행의 피로를 풀기에 딱 좋습니다.",
+        "date": "2026-05-05"
+      }
+    ]
   },
   {
     "id": 34,
@@ -1020,9 +1660,33 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 9:00~오후 10:00",
     "michelinBadge": "",
-    "tags": [],
+    "tags": [
+      "#유재석방문",
+      "#에그커피",
+      "#소금커피",
+      "#브런치카페"
+    ],
     "images": [],
-    "reviews": []
+    "reviews": [
+      {
+        "username": "유재석팬",
+        "rating": 5,
+        "text": "유재석이 방문해서 더 유명해진 카페! 에그커피와 소금커피가 정말 맛있습니다. 소금커피는 단짠의 조화가 중독성 있어요. 옆 가게 치즈케익도 꼭 같이 드셔보세요!",
+        "date": "2026-05-19"
+      },
+      {
+        "username": "셀럽맛집순례",
+        "rating": 5,
+        "text": "인테리어도 예쁘고 음료도 퀄리티가 높습니다. 브런치 세트(에그 베네딕트)까지 즐기면 완벽한 아침 식사가 됩니다.",
+        "date": "2026-05-12"
+      },
+      {
+        "username": "하노이브런치",
+        "rating": 4,
+        "text": "커피와 브런치를 함께 즐길 수 있는 몇 안 되는 카페입니다. 시그니처 에그커피의 크림이 부드럽고 진한 커피와 잘 어울려요.",
+        "date": "2026-05-04"
+      }
+    ]
   },
   {
     "id": 35,
@@ -1044,11 +1708,38 @@ const RESTAURANTS_DATA = [
     "address": "",
     "hours": "오전 8:00~오후 11:00",
     "michelinBadge": "",
-    "tags": [],
-    "images": [],
-    "reviews": []
+    "tags": [
+      "#해리포터카페",
+      "#마법테마",
+      "#버터비어",
+      "#하노이인스타명소"
+    ],
+    "images": [
+      "https://lh3.googleusercontent.com/p/AF1QipMIcnfqv4HiyEQ0pUgXf8hnTcf2YE3MjyVmjAV1=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipN1xGPVIqsX8GVFzlFq5a-VX6cBlGY4RvY0cPnf=s1360-w1360-h1020"
+    ],
+    "reviews": [
+      {
+        "username": "해리포터팬",
+        "rating": 5,
+        "text": "해리포터 세계관을 완벽하게 재현한 카페입니다! 호그와트 소품들이 가득하고 버터비어가 진짜 맛있어요. 포토스팟이 너무 많아서 시간 가는 줄 모르고 즐겼습니다!",
+        "date": "2026-05-18"
+      },
+      {
+        "username": "마법세계탐방",
+        "rating": 5,
+        "text": "인테리어 퀄리티가 정말 높아서 영화 속에 들어온 것 같은 착각이 듭니다. 마법 포션 컬러 에이드가 색깔이 변해서 너무 신기하고 맛도 달콤해요!",
+        "date": "2026-05-11"
+      },
+      {
+        "username": "하노이인스타여행",
+        "rating": 4,
+        "text": "사진 찍기 정말 좋은 카페입니다. SNS에서 본 그대로 신비롭고 아름다운 공간이에요. 음료도 맛있어서 비주얼과 맛 두 마리 토끼를 잡은 카페입니다.",
+        "date": "2026-05-03"
+      }
+    ]
   }
-];
+]];
 
 const PHRASES_DATA = [
   { kr: "안녕하세요", vn: "Xin chào", ko: "씬 짜오" },
