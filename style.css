@@ -1306,6 +1306,7 @@ footer .footer-logo {
   .restaurant-grid.swipeable-grid .restaurant-card {
     flex: 0 0 85%;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     border-radius: var(--radius-md);
   }
   
