@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // PC Carousel Slider (4 cards visible, arrow nav)
+  // PC Carousel Slider (4 cards visible, arrow nav, move one at a time)
   // ==========================================
   function setupPCSliders() {
     const CARDS_PER_PAGE = 4;
@@ -178,15 +178,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const nextBtn = wrapper.querySelector('.next-btn');
       if (!grid || !prevBtn || !nextBtn) return;
 
-      let currentPage = 0;
+      let currentIndex = 0;
 
       function getCards() {
         return Array.from(grid.querySelectorAll('.restaurant-card'));
       }
 
-      function getTotalPages() {
+      function getMaxIndex() {
         const cards = getCards();
-        return Math.max(1, Math.ceil(cards.length / CARDS_PER_PAGE));
+        return Math.max(0, cards.length - CARDS_PER_PAGE);
       }
 
       function updateVisibility() {
@@ -194,15 +194,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.innerWidth <= 600) return;
 
         const cards = getCards();
-        const start = currentPage * CARDS_PER_PAGE;
+        const start = currentIndex;
         const end = start + CARDS_PER_PAGE;
 
         cards.forEach((card, i) => {
           card.style.display = (i >= start && i < end) ? '' : 'none';
         });
 
-        prevBtn.disabled = currentPage === 0;
-        nextBtn.disabled = currentPage >= getTotalPages() - 1;
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex >= getMaxIndex();
       }
 
       function resetForMobile() {
@@ -214,15 +214,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       prevBtn.addEventListener('click', () => {
-        if (currentPage > 0) {
-          currentPage--;
+        if (currentIndex > 0) {
+          currentIndex--;
           updateVisibility();
         }
       });
 
       nextBtn.addEventListener('click', () => {
-        if (currentPage < getTotalPages() - 1) {
-          currentPage++;
+        if (currentIndex < getMaxIndex()) {
+          currentIndex++;
           updateVisibility();
         }
       });
