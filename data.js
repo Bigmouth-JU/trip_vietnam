@@ -644,3 +644,36 @@ const RESTAURANTS_DATA = [
     ]
   }
 ];
+
+const PHRASES_DATA = [
+  { kr: "안녕하세요", vn: "Xin chào", ko: "씬 짜오" },
+  { kr: "감사합니다", vn: "Cảm ơn", ko: "깜 언" },
+  { kr: "메뉴판 주세요", vn: "Cho tôi xem thực đơn", ko: "쪼 또이 쎔 특 던" },
+  { kr: "이거 하나 주세요", vn: "Cho tôi một cái này", ko: "쪼 또이 못 까이 나이" },
+  { kr: "얼마인가요?", vn: "Bao nhiêu tiền?", ko: "바오 니에우 띠엔?" },
+  { kr: "계산해 주세요", vn: "Tính tiền", ko: "띤 띠엔" },
+  { kr: "고수 빼주세요", vn: "Đừng cho rau mùi", ko: "등 쪼 라우 무이" },
+  { kr: "덜 맵게 해주세요", vn: "Ít cay thôi", ko: "잇 까이 토이" },
+  { kr: "물 좀 주세요", vn: "Cho tôi ít nước", ko: "쪼 또이 잇 느억" },
+  { kr: "얼음 주세요", vn: "Cho tôi đá", ko: "쪼 또이 다" },
+  { kr: "맥주 하나 주세요", vn: "Cho một bia", ko: "쪼 못 비아" },
+  { kr: "물티슈 주세요", vn: "Cho tôi khăn ướt", ko: "쪼 또이 칸 으엇" },
+  { kr: "화장실이 어디예요?", vn: "Nhà vệ sinh ở đâu?", ko: "냐 베 신 어 더우?" },
+  { kr: "두 명입니다", vn: "Hai người", ko: "하이 응어이" },
+  { kr: "맛있어요", vn: "Ngon lắm", ko: "응온 람" },
+  { kr: "포장해 주세요", vn: "Cho tôi mang về", ko: "쪼 또이 망 베" },
+  { kr: "향채 다 빼주세요", vn: "Không rau thơm", ko: "콤 라우 텀" },
+  { kr: "앞접시 주세요", vn: "Cho tôi bát nhỏ", ko: "쪼 또이 밧 녀" },
+  { kr: "조금 짜요", vn: "Hơi mặn", ko: "허이 만" },
+  { kr: "추천 메뉴가 뭔가요?", vn: "Món nào ngon nhất?", ko: "몬 나오 응온 녓?" },
+  { kr: "같은 걸로 주세요", vn: "Cho tôi giống cái này", ko: "쪼 또이 쭁 까이 나이" },
+  { kr: "수저 떨어뜨렸어요", vn: "Bị rơi đũa", ko: "비 저이 두어" },
+  { kr: "영수증 주세요", vn: "Cho tôi hóa đơn", ko: "쪼 또이 화 던" },
+  { kr: "냅킨 좀 주세요", vn: "Cho tôi giấy ăn", ko: "쪼 또이 저이 안" },
+  { kr: "얼음 빼고 주세요", vn: "Không đá", ko: "콤 다" },
+  { kr: "더 주세요", vn: "Cho tôi thêm", ko: "쪼 또이 템" },
+  { kr: "소고기 쌀국수 주세요", vn: "Cho một phở bò", ko: "쪼 못 퍼 보" },
+  { kr: "다 먹었어요", vn: "Ăn xong rồi", ko: "안 쏭 조이" },
+  { kr: "너무 비싸요", vn: "Đắt quá", ko: "닷 꾸어" },
+  { kr: "할인 되나요?", vn: "Có giảm giá không?", ko: "꼬 잠 자 콤?" }
+];

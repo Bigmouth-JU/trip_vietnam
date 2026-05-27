@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderAllSections();
     setupCalculator();
     setupFabMenu();
+    initPhrasesSlider();
     setupEventListeners();
   }
 
@@ -384,6 +385,57 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target === fabMenuOverlay) {
         fabMenuOverlay.classList.add('hidden');
       }
+    });
+  }
+
+  // ==========================================
+  // Phrases Slider Setup
+  // ==========================================
+  function initPhrasesSlider() {
+    const slider = document.getElementById('phrases-slider');
+    const dotsContainer = document.getElementById('phrases-dots');
+    if (!slider || !dotsContainer || typeof PHRASES_DATA === 'undefined') return;
+
+    slider.innerHTML = '';
+    dotsContainer.innerHTML = '';
+
+    const pageSize = 6;
+    const totalPages = Math.ceil(PHRASES_DATA.length / pageSize);
+
+    for (let i = 0; i < totalPages; i++) {
+      const pageDiv = document.createElement('div');
+      pageDiv.className = 'phrases-page';
+
+      const pagePhrases = PHRASES_DATA.slice(i * pageSize, (i + 1) * pageSize);
+      pagePhrases.forEach(p => {
+        const row = document.createElement('div');
+        row.className = 'phrase-row';
+        row.innerHTML = `
+          <div class="phrase-kr">${p.kr}</div>
+          <div class="phrase-vn-wrapper">
+            <span class="phrase-vn">${p.vn}</span>
+            <span class="phrase-ko">[${p.ko}]</span>
+          </div>
+        `;
+        pageDiv.appendChild(row);
+      });
+
+      slider.appendChild(pageDiv);
+
+      const dot = document.createElement('span');
+      dot.className = `phrase-dot ${i === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => {
+        slider.scrollTo({ left: slider.clientWidth * i, behavior: 'smooth' });
+      });
+      dotsContainer.appendChild(dot);
+    }
+
+    slider.addEventListener('scroll', () => {
+      const activeIdx = Math.round(slider.scrollLeft / slider.clientWidth);
+      const dots = dotsContainer.querySelectorAll('.phrase-dot');
+      dots.forEach((dot, idx) => {
+        dot.className = `phrase-dot ${idx === activeIdx ? 'active' : ''}`;
+      });
     });
   }
 

@@ -323,6 +323,57 @@ button {
   gap: 6px;
 }
 
+/* Phrases Slider Layout */
+.phrases-slider-container {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 24px;
+}
+
+.phrases-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.phrases-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.phrases-page {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 12px;
+}
+
+.phrases-dots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+}
+
+.phrase-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(43, 102, 246, 0.3);
+  transition: all 0.3s;
+}
+
+.phrase-dot.active {
+  background: var(--accent-color);
+  width: 20px;
+  border-radius: 4px;
+}
+
 /* ==========================================
    Home Content Sections & Headers
    ========================================== */
