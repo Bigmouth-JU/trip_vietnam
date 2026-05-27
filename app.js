@@ -12,9 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Section Curation Mapping based on updated 12-restaurant sheet
   const SECTIONS_CONFIG = {
-    tourist: [1, 2, 3, 4],     // 관광객이라면 가성비와 갬성을 한번에! (짜까탕롱, 꽌안응온, 잠바가든, 멧)
-    luxury: [5, 6, 7, 8],      // 베트남만의 고급 로컬 다이닝 (짜오반, 떰비, 룩락, 챕터 다이닝)
-    korean: [9, 10, 11, 12]    // 한국인이 사랑하는 핫플레이스 (분짜 흐엉리엔, 분짜닥킴, 퍼텐리궉수, 분보남보백프응)
+    tourist: [1, 2, 3, 4, 5, 6, 7],     // 관광객이라면 가성비와 갬성을 한번에!
+    luxury: [8, 9, 10, 11, 12, 13, 14],      // 베트남만의 고급 로컬 다이닝
+    korean: [15, 16, 17, 18, 19, 20, 21],    // 한국인이 사랑하는 핫플레이스
+    hotel: [22, 23, 24, 25, 26, 27, 28],     // 호텔 근처 럭셔리 맛집
+    cafe: [29, 30, 31, 32, 33, 34, 35]       // 커피 & 디저트
   };
 
   // ==========================================
@@ -27,6 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const gridTourist = document.getElementById('grid-tourist');
   const gridLuxury = document.getElementById('grid-luxury');
   const gridKorean = document.getElementById('grid-korean');
+  const gridHotel = document.getElementById('grid-hotel');
+  const gridCafe = document.getElementById('grid-cafe');
 
   // Calculator inputs
   const calcKrwInput = document.getElementById('calc-krw');
@@ -104,7 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'restaurant-card fade-in-up';
       card.innerHTML = `
         <div class="card-img-wrapper">
-          <img class="card-img" src="${r.images[0]}" alt="${r.name}" loading="lazy">
+          ${r.images && r.images.length > 0 
+            ? `<img class="card-img" src="${r.images[0]}" alt="${r.name}" loading="lazy">` 
+            : `<div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#e2e8f0; color:#94a3b8; font-size:2rem;"><i class="fa-solid fa-image"></i></div>`
+          }
         </div>
         
         <!-- Recommendation Badge -->
@@ -138,11 +145,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Render all three curation grids
+  // Render all curation grids
   function renderAllSections() {
     renderSectionGrid(gridTourist, SECTIONS_CONFIG.tourist);
     renderSectionGrid(gridLuxury, SECTIONS_CONFIG.luxury);
     renderSectionGrid(gridKorean, SECTIONS_CONFIG.korean);
+    renderSectionGrid(gridHotel, SECTIONS_CONFIG.hotel);
+    renderSectionGrid(gridCafe, SECTIONS_CONFIG.cafe);
   }
 
   // Show Detail View and Load Specific Restaurant Details
