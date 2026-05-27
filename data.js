@@ -1739,7 +1739,7 @@ const RESTAURANTS_DATA = [
       }
     ]
   }
-]];
+];
 
 const PHRASES_DATA = [
   { kr: "안녕하세요", vn: "Xin chào", ko: "씬 짜오" },
