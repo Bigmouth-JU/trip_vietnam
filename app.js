@@ -389,7 +389,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Setup Exchange Rate Calculator Interactive Logic
-  const RATE_KRW_TO_VND = 17.5131;
+  const RATE_KRW_TO_VND = 17.452;
 
   function setupCalculator() {
     calcKrwInput.addEventListener('input', (e) => {
@@ -421,6 +421,11 @@ document.addEventListener('DOMContentLoaded', () => {
       calcVndInput.value = vndVal.toLocaleString();
       calcKrwInput.value = Math.round(vndVal / RATE_KRW_TO_VND).toLocaleString();
     });
+
+    // Initialize calculator values dynamically on load
+    const initialKrw = parseFloat(calcKrwInput.value.replace(/,/g, '')) || 10000;
+    calcKrwInput.value = initialKrw.toLocaleString();
+    calcVndInput.value = Math.round(initialKrw * RATE_KRW_TO_VND).toLocaleString();
   }
 
   // Setup FAB Menu List and Events
