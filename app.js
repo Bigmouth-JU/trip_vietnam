@@ -109,8 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sectionRestaurants.forEach((r, index) => {
       const hashtagsHtml = r.tags.map(tag => `<span class="card-tag">${tag}</span>`).join(' ');
       
-      const recommendedIds = [1, 4, 5, 6];
-      const badgeHtml = recommendedIds.includes(r.id) 
+      const badgeHtml = index < 2 
         ? `<div class="card-badge-top-left"><i class="fa-solid fa-thumbs-up"></i> 강추</div>` 
         : '';
 
@@ -119,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.innerHTML = `
         <div class="card-img-wrapper">
           ${r.images && r.images.length > 0 
-            ? `<img class="card-img" src="${r.images[0]}" alt="${r.name}" loading="lazy">` 
+            ? `<img class="card-img" src="${r.images[0]}" alt="${r.name}" loading="lazy" referrerpolicy="no-referrer">` 
             : `<div style="width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#e2e8f0; color:#94a3b8; font-size:2rem;"><i class="fa-solid fa-image"></i></div>`
           }
         </div>
@@ -157,10 +156,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Render all curation grids
   function renderAllSections() {
+    renderSectionGrid(gridHotel, SECTIONS_CONFIG.hotel);
     renderSectionGrid(gridTourist, SECTIONS_CONFIG.tourist);
     renderSectionGrid(gridLuxury, SECTIONS_CONFIG.luxury);
     renderSectionGrid(gridKorean, SECTIONS_CONFIG.korean);
-    renderSectionGrid(gridHotel, SECTIONS_CONFIG.hotel);
     renderSectionGrid(gridCafe, SECTIONS_CONFIG.cafe);
     setupPCSliders();
   }
@@ -169,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // PC Carousel Slider (4 cards visible, arrow nav, move one at a time)
   // ==========================================
   function setupPCSliders() {
-    const CARDS_PER_PAGE = 4;
     const wrappers = document.querySelectorAll('.slider-wrapper');
 
     wrappers.forEach(wrapper => {
@@ -178,63 +176,41 @@ document.addEventListener('DOMContentLoaded', () => {
       const nextBtn = wrapper.querySelector('.next-btn');
       if (!grid || !prevBtn || !nextBtn) return;
 
-      let currentIndex = 0;
-
-      function getCards() {
-        return Array.from(grid.querySelectorAll('.restaurant-card'));
+      function getScrollStep() {
+        const card = grid.querySelector('.restaurant-card');
+        if (!card) return 0;
+        const cardWidth = card.getBoundingClientRect().width;
+        const style = window.getComputedStyle(grid);
+        const gap = parseFloat(style.columnGap || style.gap) || 0;
+        return cardWidth + gap;
       }
 
-      function getMaxIndex() {
-        const cards = getCards();
-        return Math.max(0, cards.length - CARDS_PER_PAGE);
-      }
-
-      function updateVisibility() {
-        // Only run on PC (width > 600)
-        if (window.innerWidth <= 600) return;
-
-        const cards = getCards();
-        const start = currentIndex;
-        const end = start + CARDS_PER_PAGE;
-
-        cards.forEach((card, i) => {
-          card.style.display = (i >= start && i < end) ? '' : 'none';
-        });
-
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= getMaxIndex();
-      }
-
-      function resetForMobile() {
-        if (window.innerWidth <= 600) {
-          getCards().forEach(card => { card.style.display = ''; });
-          prevBtn.disabled = false;
-          nextBtn.disabled = false;
-        }
+      function updateButtonStates() {
+        // Disable prevBtn if we are at or near the start (scrollLeft <= 5)
+        prevBtn.disabled = grid.scrollLeft <= 5;
+        
+        // Disable nextBtn if we are at or near the end (scrollLeft + clientWidth >= scrollWidth - 5)
+        nextBtn.disabled = (grid.scrollLeft + grid.clientWidth) >= (grid.scrollWidth - 5);
       }
 
       prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-          currentIndex--;
-          updateVisibility();
-        }
+        const step = getScrollStep();
+        grid.scrollBy({ left: -step, behavior: 'smooth' });
       });
 
       nextBtn.addEventListener('click', () => {
-        if (currentIndex < getMaxIndex()) {
-          currentIndex++;
-          updateVisibility();
-        }
+        const step = getScrollStep();
+        grid.scrollBy({ left: step, behavior: 'smooth' });
       });
 
-      // Initial render
-      updateVisibility();
+      // Listen to scroll events to update button states
+      grid.addEventListener('scroll', updateButtonStates);
 
-      // Reset on resize
-      window.addEventListener('resize', () => {
-        resetForMobile();
-        if (window.innerWidth > 600) updateVisibility();
-      });
+      // Listen to window resize to update button states
+      window.addEventListener('resize', updateButtonStates);
+
+      // Initial state check after rendering
+      setTimeout(updateButtonStates, 100);
     });
   }
 
@@ -328,6 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const img = document.createElement('img');
       img.src = src;
       img.className = 'gallery-slide-img';
+      img.referrerPolicy = 'no-referrer';
       img.addEventListener('click', () => openLightbox(idx));
       detailGallerySlider.appendChild(img);
       
@@ -454,10 +431,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Group restaurants by category (preserve section order)
     const sectionOrder = [
+      '호텔 근처 럭셔리 맛집',
       '관광객이라면 가성비와 갬성을 한번에!',
       '베트남만의 고급 로컬 다이닝',
       '한국인이 사랑하는 핫플레이스',
-      '호텔 근처 럭셔리 맛집',
       '커피 & 디저트'
     ];
     const sectionIcons = {

@@ -477,10 +477,18 @@ button {
    Home Grid Layout (4 Columns per section)
    ========================================== */
 .restaurant-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   gap: 24px;
   width: 100%;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.restaurant-grid::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 /* ==========================================
@@ -495,6 +503,9 @@ button {
   transition: var(--transition-smooth);
   cursor: pointer;
   background-color: var(--bg-secondary);
+  flex: 0 0 calc((100% - 3 * 24px) / 4);
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .restaurant-card:hover {
@@ -561,7 +572,12 @@ button {
   color: #93c5fd;
   margin-bottom: 8px;
   line-height: 1.4;
-  min-height: 3.5em; /* holds up to ~3 lines, aligns title regardless of intro length */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 4.2em; /* 3 lines * 1.4 line-height = 4.2em, aligns title perfectly */
 }
 
 .card-title {
@@ -1258,8 +1274,8 @@ footer .footer-logo {
 
 /* Laptop screens (max 1200px) */
 @media (max-width: 1200px) {
-  .restaurant-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .restaurant-grid .restaurant-card {
+    flex: 0 0 calc((100% - 2 * 24px) / 3);
   }
 }
 
@@ -1280,8 +1296,11 @@ footer .footer-logo {
   }
   
   .restaurant-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+  
+  .restaurant-grid .restaurant-card {
+    flex: 0 0 calc((100% - 16px) / 2);
   }
   
   .detail-main-layout {
@@ -1330,23 +1349,12 @@ footer .footer-logo {
   }
 
   .restaurant-grid.swipeable-grid {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
     gap: 16px;
     padding-bottom: 12px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Firefox */
-  }
-  
-  .restaurant-grid.swipeable-grid::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
   }
   
   .restaurant-grid.swipeable-grid .restaurant-card {
     flex: 0 0 85%;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
     border-radius: var(--radius-md);
   }
 
