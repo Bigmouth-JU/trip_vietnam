@@ -296,6 +296,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render Auto-Rolling Image Gallery Slider
   let galleryInterval = null;
   let currentSlide = 0;
+  let startX = 0;
+  let startY = 0;
+  let isSwiping = false;
 
   function renderGallery(images) {
     if (!detailGallerySlider) return;
@@ -318,17 +321,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     currentSlide = 0;
     updateSlider();
+    setupSwipeSupport();
+    startAutoRolling();
+  }
 
+  function startAutoRolling() {
     if (galleryInterval) clearInterval(galleryInterval);
-    galleryInterval = setInterval(() => {
-      currentSlide = (currentSlide + 1) % images.length;
-      updateSlider();
-    }, 3000);
+    if (window.innerWidth <= 600 && currentGalleryImages.length > 1) {
+      galleryInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % currentGalleryImages.length;
+        updateSlider();
+      }, 3000);
+    }
   }
 
   function updateSlider() {
     if (!detailGallerySlider) return;
-    detailGallerySlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    if (window.innerWidth <= 600) {
+      detailGallerySlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    } else {
+      detailGallerySlider.style.transform = 'none';
+    }
     
     const dots = galleryDotsContainer.querySelectorAll('.gallery-dot');
     dots.forEach((dot, idx) => {
@@ -339,12 +352,58 @@ document.addEventListener('DOMContentLoaded', () => {
   function goToSlide(idx) {
     currentSlide = idx;
     updateSlider();
-    if (galleryInterval) clearInterval(galleryInterval);
-    galleryInterval = setInterval(() => {
-      currentSlide = (currentSlide + 1) % currentGalleryImages.length;
-      updateSlider();
-    }, 3000);
+    startAutoRolling();
   }
+
+  function setupSwipeSupport() {
+    if (!detailGallerySlider) return;
+    if (detailGallerySlider.dataset.swipeInitialized) return;
+    detailGallerySlider.dataset.swipeInitialized = 'true';
+
+    detailGallerySlider.addEventListener('touchstart', (e) => {
+      if (window.innerWidth > 600) return;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isSwiping = true;
+      if (galleryInterval) clearInterval(galleryInterval);
+    }, { passive: true });
+
+    detailGallerySlider.addEventListener('touchmove', (e) => {
+      if (!isSwiping || window.innerWidth > 600) return;
+      const moveX = e.touches[0].clientX;
+      const moveY = e.touches[0].clientY;
+      if (Math.abs(moveX - startX) > Math.abs(moveY - startY)) {
+        if (e.cancelable) e.preventDefault();
+      }
+    }, { passive: false });
+
+    detailGallerySlider.addEventListener('touchend', (e) => {
+      if (!isSwiping || window.innerWidth > 600) return;
+      isSwiping = false;
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+      const diffX = startX - endX;
+      const diffY = startY - endY;
+
+      if (Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)) {
+        const total = currentGalleryImages.length;
+        if (total > 0) {
+          if (diffX > 0) {
+            currentSlide = (currentSlide + 1) % total;
+          } else {
+            currentSlide = (currentSlide - 1 + total) % total;
+          }
+          updateSlider();
+        }
+      }
+      startAutoRolling();
+    }, { passive: true });
+  }
+
+  window.addEventListener('resize', () => {
+    updateSlider();
+    startAutoRolling();
+  });
 
   // Render Reviews List
   function renderReviews(reviewsList) {

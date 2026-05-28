@@ -799,7 +799,7 @@ button {
   gap: 12px;
   height: auto;
   background-color: transparent;
-  transform: none !important;
+  transform: none;
   transition: none;
 }
 
