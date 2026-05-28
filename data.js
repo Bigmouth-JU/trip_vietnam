@@ -1,4 +1,4 @@
-const RESTAURANTS_DATA = [
+export const RESTAURANTS_DATA = [
   {
     "id": 1,
     "category": "관광객이라면 가성비와 갬성을 한번에!",
@@ -1901,7 +1901,7 @@ const RESTAURANTS_DATA = [
   }
 ];
 
-const PHRASES_DATA = [
+export const PHRASES_DATA = [
   { kr: "안녕하세요", vn: "Xin chào", ko: "씬 짜오" },
   { kr: "감사합니다", vn: "Cảm ơn", ko: "깜 언" },
   { kr: "메뉴판 주세요", vn: "Cho thực đơn", ko: "쪼 특 던" },

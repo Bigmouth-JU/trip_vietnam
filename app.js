@@ -1,3 +1,5 @@
+import { RESTAURANTS_DATA, PHRASES_DATA } from './data.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   
   // ==========================================
